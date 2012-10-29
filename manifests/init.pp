@@ -1,4 +1,4 @@
-class ucarp {
+class ucarp ( $service_status = "running" ) {
   $package_name = 'ucarp'
 
   package { $package_name :
@@ -13,9 +13,9 @@ class ucarp {
   }
 
   service { 'carp' :
-    ensure => "running",
+    ensure => $service_status,
     enable => "true",
-    hasstatus => "true",
+    hasstatus => "false",
     require => Package["ucarp"],
     }
 }
