@@ -5,5 +5,7 @@ ONBOOT=yes
 BOOTPROTO=static
 TYPE=Ethernet
 IPADDR=<%= vip_addr %>
+<% if vip_addr_gw != "absent" %>
 GATEWAY=<%= vip_addr_gw %>
+<% end %>
 NETMASK=<%= vip_addr_netmask %>

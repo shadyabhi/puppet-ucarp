@@ -2,5 +2,4 @@ ID=<%= node_id %>
 PASSWORD=<%= password %>
 BIND_INTERFACE=<%= interface_primary %>
 VIP_INTERFACE=<%= interface_vip %>:<%= node_id %>
-#OPTIONS="-k 1 -P -b 1 --upscript=/etc/sysconfig/carp/vip-up --downscript=/etc/sysconfig/carp/vip-down"
 OPTIONS="<%= other_options %> --upscript=/etc/sysconfig/carp/vip-up --downscript=/etc/sysconfig/carp/vip-down"

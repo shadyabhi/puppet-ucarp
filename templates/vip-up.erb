@@ -3,4 +3,7 @@
 exec 2> /dev/null
 
 /sbin/ifconfig $1 $2 netmask <%= vip_addr_netmask %>
+
+<% if vip_addr_gw != "absent" %>
 route add default gw <%= vip_addr_gw %> <%= interface_vip %>
+<% end %>
