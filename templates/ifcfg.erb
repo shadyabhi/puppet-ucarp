@@ -1,0 +1,9 @@
+#This is for node <%= node_id %> with public up <%= vip_addr %>
+DEVICE=<%= interface_vip %>
+HWADDR=<%= vip_addr_mac %>
+ONBOOT=yes
+BOOTPROTO=static
+TYPE=Ethernet
+IPADDR=<%= vip_addr %>
+GATEWAY=<%= vip_addr_gw %>
+NETMASK=<%= vip_addr_netmask %>

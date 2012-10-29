@@ -1,0 +1,11 @@
+#!/bin/bash
+exec 2> /dev/null
+
+#Release the IP address
+/sbin/ifconfig <%= interface_vip %> 0.0.0.0
+
+#If interface is up, put it down
+/sbin/ifconfig $1 | grep 'inet addr'
+if [[ $? == 0 ]];then
+        /sbin/ifconfig $1 down
+fi

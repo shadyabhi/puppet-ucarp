@@ -1,0 +1,6 @@
+#!/bin/bash
+
+exec 2> /dev/null
+
+/sbin/ifconfig $1 $2 netmask <%= vip_addr_netmask %>
+route add default gw <%= vip_addr_gw %> <%= interface_vip %>
